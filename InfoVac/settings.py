@@ -57,7 +57,7 @@ ROOT_URLCONF = 'InfoVac.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'TabelaDeVacinas/Templates/ArquivosHTML')],
+        'DIRS': [os.path.join(BASE_DIR, 'TabelaDeVacinas/Templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
