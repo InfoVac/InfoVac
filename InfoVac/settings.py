@@ -121,7 +121,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'TabelaDeVacinas/static'),
+    os.path.join(BASE_DIR, 'TabelaDeVacinas/static/css'),
 ]
 
 # Default primary key field type
