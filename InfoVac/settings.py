@@ -78,9 +78,14 @@ WSGI_APPLICATION = 'InfoVac.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgres://infovacdb_user:YgttVvqKvhSnt7ohqFUbKlq4GR7u9iQF@localhost:5432/InfoVacDB'
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'infovacdb',
+        'USER': 'infovacdb_user',
+        'PASSWORD': 'YgttVvqKvhSnt7ohqFUbKlq4GR7u9iQF',
+        'HOST': 'dpg-cli26pd8td7s73bs2ou0-a',  # Isso pode ser um endereço IP ou um nome de host fornecido pelo Render
+        'PORT': '5432',
+    }
 }
 
 
