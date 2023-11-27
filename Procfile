@@ -1,1 +1,1 @@
-web: gunicorn meusite:app
+web: gunicorn InfoVac:a wsgi
