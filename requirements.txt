@@ -11,3 +11,4 @@ sqlparse
 typing-extensions
 werkzeug
 zipp
+gunicorn
