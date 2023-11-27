@@ -4,3 +4,4 @@ gunicorn
 packaging
 sqlparse
 tzdata
+dj-database-url
