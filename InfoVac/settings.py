@@ -126,6 +126,7 @@ USE_TZ = True
 STATIC_URL = '/opt/render/project/src/TabelaDeVacinas/static/'
 
 STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'TabelaDeVacinas/static/css'),
     os.path.join(BASE_DIR, 'TabelaDeVacinas/static/fonts'),
     os.path.join(BASE_DIR, 'TabelaDeVacinas/static/img'),
