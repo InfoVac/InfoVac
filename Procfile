@@ -1,1 +1,2 @@
-web: gunicorn InfoVac.wsgi
+web: gunicorn InfoVac.wsgi:application
+
