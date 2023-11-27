@@ -122,6 +122,10 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'TabelaDeVacinas/static/css'),
+    os.path.join(BASE_DIR, 'TabelaDeVacinas/static/fonts'),
+    os.path.join(BASE_DIR, 'TabelaDeVacinas/static/img'),
+    os.path.join(BASE_DIR, 'TabelaDeVacinas/static/js'),
+    os.path.join(BASE_DIR, 'TabelaDeVacinas/static/vendor'),
 ]
 
 # Default primary key field type
