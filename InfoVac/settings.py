@@ -1,4 +1,5 @@
 import os
+import dj_database_url
 
 """
 Django settings for InfoVac project.
@@ -77,10 +78,9 @@ WSGI_APPLICATION = 'InfoVac.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default='postgres://infovacdb_user:YgttVvqKvhSnt7ohqFUbKlq4GR7u9iQF@localhost:5432/InfoVacDB'
+    )
 }
 
 
