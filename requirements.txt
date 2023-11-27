@@ -5,3 +5,4 @@ packaging
 sqlparse
 tzdata
 dj-database-url
+psycopg2>
