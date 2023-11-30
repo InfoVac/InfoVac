@@ -1,8 +1,0 @@
-﻿asgiref
-Django
-gunicorn
-packaging
-sqlparse
-tzdata
-dj-database-url
-psycopg2>
