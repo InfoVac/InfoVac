@@ -1,0 +1,6 @@
+asgiref
+Django
+gunicorn
+packaging
+sqlparse
+typing-extensions
