@@ -12,3 +12,5 @@ urlpatterns = [
     path('buscar_horario', views.buscar_horario, name='buscar_horario'),
 ]
 
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
