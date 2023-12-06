@@ -10,7 +10,7 @@ urlpatterns = [
     path('buscar_disponibilidade', views.buscar_disponibilidade, name='buscar_disponibilidade'),
     path('more_info', views.more_info, name='more_info'),
     path('buscar_horario', views.buscar_horario, name='buscar_horario'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
