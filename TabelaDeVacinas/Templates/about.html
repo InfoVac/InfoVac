@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="copyright" content="MACode ID, https://macodeid.com/">
+  <link rel="stylesheet" href="/TabelaDeVacinas/static/TabelaDeVacinas/css/bootstrap.css">
+  <link rel="stylesheet" href="/TabelaDeVacinas/static/TabelaDeVacinas/css/maicons.css">
+  <link rel="stylesheet" href="/TabelaDeVacinas/static/TabelaDeVacinas/css/style.css">
+  <link rel="stylesheet" href="/TabelaDeVacinas/static/TabelaDeVacinas/css/theme.css">
+  <link rel="stylesheet" href="/TabelaDeVacinas/static/TabelaDeVacinas/vendor/animate/animate.css">
+  <link rel="stylesheet" href="/TabelaDeVacinas/static/TabelaDeVacinas/vendor/owl-carousel/css/owl.carousel.css">
+  <title>{% block title %}InfoVAC{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+  <div class="page-hero bg-image overlay-dark" style="background-image: url('{% static 'TabelaDeVacinas/img/bg_image_1.jpg' %}');">
+    <div class="hero-section">
+      <div class="container text-center wow zoomIn">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+            <li class="breadcrumb-item"><a href="/">Início</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Sobre nós</li>
+          </ol>
+        </nav>
+        <h1 class="font-weight-normal">Sobre nós</h1>
+      </div>
+    </div>
+  </div> 
+  <div class="page-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 wow fadeInUp">
+          <h1 class="text-center mb-3">Bem Vindo ao <span>Info</span>VAC!</h1> 
+          <div class="text-lg">
+            <p>
+              A ideia surgiu com um grupo de estudantes de engenharia de software com a ideia de produzir um projeto sobre a disponibilidade das vacinas para atender a matéria de projeto de extensão. A criação do site tem a intenção de mostrar a importância de sempre ter sua carteira atualizada, para prevenir de doenças potencialmente graves, surtos e epidemias. O projeto de extensão não só abordou a necessidade urgente de conscientização, mas também demonstrou como a iniciativa estudantil pode ter um impacto significativo na promoção da saúde pública.
+            </p>
+            <p>
+              Na barra de navegação, em Procurar Vacina e Mais Informações, você pode consultar as informações que necessita. 
+            </p>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+<script src="{% static 'TabelaDeVacinas/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'TabelaDeVacinas/js/jquery-3.5.1.min.js' %}"></script>
+<script src="{% static 'js/theme.js' %}"></script>
+<script src="{% static 'vendor/owl-carousel/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'vendor/wow/wow.min.js' %}"></script>
+</body>
+</html>

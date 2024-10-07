@@ -1,0 +1,139 @@
+/* Estilos para o herói da página */
+.page-hero {
+    background-image: url('sua-imagem.jpg'); /* Substitua 'sua-imagem.jpg' pela URL da imagem desejada */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px; /* Adicionado 20px de margem lateral */
+}
+
+.page-hero h1 {
+    font-weight: normal;
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Estilos para o breadcrumb */
+.breadcrumb {
+    justify-content: center;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item a {
+    color: #00D9A5;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+/* Estilos para a seção de pesquisa */
+.page-section {
+    padding: 80px 20px; /* Adicionado 20px de margem lateral */
+    background-color: #f0f0f0;
+}
+
+.search-container {
+    text-align: center;
+}
+
+.search-container h1 {
+    color:#00D9A5;
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: flex; /* Torna os elementos filhos flexíveis para alinhar na horizontal */
+    align-items: center; /* Alinhar elementos verticalmente ao centro */
+}
+
+.search-box-container {
+    display: flex; /* Torna os elementos filhos flexíveis */
+    align-items: center; /* Alinhar elementos verticalmente ao centro */
+}
+
+form {
+    width: 100%;
+    display: flex; /* Torna os elementos filhos flexíveis */
+    align-items: center; /* Alinhar elementos verticalmente ao centro */
+}
+
+/* Estilos para a barra de pesquisa */
+.search-box {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #00D9A5;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #00D9A5;
+    background-color: #FFF;
+    transition: border-color 0.3s;
+    flex: 1; /* Ocupa o espaço restante na largura */
+    margin-right: 10px;
+}
+
+::placeholder {
+    color: #00D9A5;
+}
+
+.search-input {
+    display: flex;
+    align-items: center; /* Alinhar verticalmente no centro */
+}
+
+.search-button {
+    background-color: #00D9A5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #007A68; /* Um tom mais escuro do verde ao passar o mouse */
+}
+
+.search-box:focus {
+    border-color: #00D9A5;
+    outline: none;
+}
+
+/* Estilos para a tabela de resultados */
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.result-table th, .result-table td {
+    border: 1px solid #00D9A5;
+    padding: 10px;
+}
+
+.result-table th {
+    background-color: #00D9A5;
+    color: #FFF;
+    text-align: left;
+    font-weight: bold;
+}
+
+.result-table span {
+    color: #00D9A5;
+    text-decoration: none;
+}
+
+.result-table a:hover {
+    text-decoration: underline;
+}
+
+/* Adicionar linhas de tabela visíveis */
+.result-table tr {
+    border: 1px solid #00D9A5;
+}
+
+ul li.footer-item {
+    color: #FFFFFF99;
+    padding: 6px 0px;
+}

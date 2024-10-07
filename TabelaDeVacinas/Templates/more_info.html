@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="copyright" content="MACode ID, https://macodeid.com/">
+  <link rel="stylesheet" href="/TabelaDeVacinas/static/TabelaDeVacinas/css/bootstrap.css">
+  <link rel="stylesheet" href="/TabelaDeVacinas/static/TabelaDeVacinas/css/maicons.css">
+  <link rel="stylesheet" href="/TabelaDeVacinas/static/TabelaDeVacinas/css/style.css">
+  <link rel="stylesheet" href="/TabelaDeVacinas/static/TabelaDeVacinas/css/theme.css">
+  <link rel="stylesheet" href="/TabelaDeVacinas/static/TabelaDeVacinas/vendor/animate/animate.css">
+  <link rel="stylesheet" href="/TabelaDeVacinas/static/TabelaDeVacinas/vendor/owl-carousel/css/owl.carousel.css">
+  <title>{% block title %}InfoVAC{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+    <div class="page-hero bg-image overlay-dark" style="background-image: url('{% static 'TabelaDeVacinas/img/bg_image_1.jpg' %}');">
+        <div class="hero-section">
+            <div class="container text-center wow zoomIn">
+            <nav aria-label="Breadcrumb">
+                <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+                <li class="breadcrumb-item"><a href="/">Início</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Mais Informações</li>
+                </ol>
+            </nav>
+            <h1 class="font-weight-normal">Mais Informações</h1>
+            </div>
+        </div>
+    </div> 
+    <div class="page-section pb-0">
+        <div class="page-section-sm">
+            <div class="search-container">
+                <h1>Pesquisar Horário</h1>
+                <div class="search-box-container">
+                    <form method="get" action="{% url 'buscar_horario' %}">
+                        <input type="text" class="search-box" id="nome_ubs" name="nome_ubs" placeholder="Digite o nome da UBS que deseja consultar o horário...">
+                        <button type="submit" class="search-button">Pesquisar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="search-table-container">
+                <table class="result-table">
+                    <thead>
+                        <tr>
+                            <th>Nome da UBS</th>
+                            <th>Horário de Funcionamento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Aqui você pode inserir os dados da tabela a partir do banco de dados -->
+                    {% for tabela in tabelas %}
+                        <tr>
+                            <td><span>{{tabela.nome_ubs}}</span></td>
+                            <td><span>{{tabela.horario}}</span></td>
+                        </tr>
+                    {% endfor %}
+                      <!-- Adicione mais linhas conforme necessário -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> <!-- .bg-light -->
+{% endblock %}
+<script src="{% static 'TabelaDeVacinas/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'TabelaDeVacinas/js/jquery-3.5.1.min.js' %}"></script>
+<script src="{% static 'js/theme.js' %}"></script>
+<script src="{% static 'vendor/owl-carousel/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'vendor/wow/wow.min.js' %}"></script>
+</body>
+</html>
