@@ -10,7 +10,7 @@ def about(request):
     return render(request, 'about.html')
 
 def search(request):
-    tabelas = Tabela_Disponibilidade.objects.all().order_by('nome_ubs', 'nome_vacina')
+    tabelas = Tabela_Disponibilidade.objects.select_related('ubs', 'vacina').order_by('ubs__nome_ubs', 'vacina__nome_vacina')
     return render(request, 'search.html', {'tabelas': tabelas})
 
 def buscar_disponibilidade(request):
