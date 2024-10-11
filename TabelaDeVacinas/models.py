@@ -25,3 +25,15 @@ class UBSVacinas(models.Model):
 
     def __str__(self):
         return f"{self.ubs} - {self.vacina} - {self.status}"
+
+class Tabela_Disponibilidade(models.Model):
+    DISPONIBILIDADE_CHOICES = [
+        ('Disponível', 'Disponível'),
+        ('Não Disponível', 'Não Disponível'),
+    ]
+    ubs = models.ForeignKey(UBS, on_delete=models.CASCADE)
+    vacina = models.ForeignKey(Vacinas, on_delete=models.CASCADE)
+    status = models.CharField(max_length=20, choices=DISPONIBILIDADE_CHOICES, default='Não Disponível')
+
+    def __str__(self):
+        return f"{self.ubs} - {self.vacina} - {self.status}"
