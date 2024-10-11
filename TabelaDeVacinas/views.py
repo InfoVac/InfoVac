@@ -13,17 +13,9 @@ def search(request):
     tabelas = Tabela_Disponibilidade.objects.all().order_by('nome_ubs', 'nome_vacina')
     return render(request, 'search.html', {'tabelas': tabelas})
 
-def lista_ubs_vacinas(request):
+def buscar_disponibilidade(request):
     ubs_vacinas = UBSVacinas.objects.select_related('ubs', 'vacina').all()
     return render(request, 'lista_ubs_vacinas.html', {'ubs_vacinas': ubs_vacinas})
-
-def buscar_disponibilidade(request):
-    search_query = request.GET.get('search_query', '')
-    tabelas = Tabela_Disponibilidade.objects.all()
-    if search_query:
-        from django.db.models import Q
-        tabelas = tabelas.filter(Q(nome_ubs__icontains=search_query) | Q(nome_vacina__icontains=search_query))
-    return render(request, 'search.html', {'tabelas': tabelas})
 
 def more_info(request):
     tabelas = Tabela_Funcionamento.objects.all().order_by('nome_ubs')
