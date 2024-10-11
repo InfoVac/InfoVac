@@ -2,5 +2,6 @@ asgiref
 Django
 gunicorn
 packaging
+psycopg2
 sqlparse
 typing-extensions
