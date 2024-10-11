@@ -17,10 +17,6 @@ def buscar_disponibilidade(request):
     ubs_vacinas = UBSVacinas.objects.select_related('ubs', 'vacina').all()
     return render(request, 'lista_ubs_vacinas.html', {'ubs_vacinas': ubs_vacinas})
 
-def more_info(request):
-    tabelas = Tabela_Funcionamento.objects.all().order_by('nome_ubs')
-    return render(request, 'more_info.html', {'tabelas': tabelas})
-
 def buscar_horario(request):
     nome_ubs = request.GET.get('nome_ubs', '')
     tabelas = Tabela_Funcionamento.objects.filter(nome_ubs__icontains=nome_ubs)
