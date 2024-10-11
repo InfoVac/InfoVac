@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 class UBS(models.Model):
     nome_ubs = models.CharField(max_length=22)
 
@@ -36,4 +34,12 @@ class Tabela_Disponibilidade(models.Model):
     status = models.CharField(max_length=20, choices=DISPONIBILIDADE_CHOICES, default='Não Disponível')
 
     def __str__(self):
-        return f"{self.ubs} - {self.vacina} - {self.status}"
+        return f"{self.ubs} - {self.vacina} - {self.status}" 
+
+class Tabela_Funcionamento(models.Model):
+    ubs = models.ForeignKey(UBS, on_delete=models.CASCADE)
+    horario_abertura = models.TimeField()
+    horario_fechamento = models.TimeField()
+
+    def __str__(self):
+        return f"{self.ubs} - {self.horario_abertura} às {self.horario_fechamento}"
