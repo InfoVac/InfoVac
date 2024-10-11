@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'InfoVac.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT', '3306'), 
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'infovac',
+        'USER': 'admin',
+        'PASSWORD': 'Xr4LtNYYYOuxHSXBmWo5jwZ6rklUCkjt',
+        'HOST': 'dpg-cs4j18rtq21c73fujjt0-a',
+        'PORT': '5432',
     }
 }
 
