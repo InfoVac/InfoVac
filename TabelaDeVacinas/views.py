@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Tabela_Disponibilidade, Tabela_Funcionamento
+from .models import UBS, Vacinas, UBSVacinas
 
 # Views
 
@@ -12,6 +12,10 @@ def about(request):
 def search(request):
     tabelas = Tabela_Disponibilidade.objects.all().order_by('nome_ubs', 'nome_vacina')
     return render(request, 'search.html', {'tabelas': tabelas})
+
+def lista_ubs_vacinas(request):
+    ubs_vacinas = UBSVacinas.objects.select_related('ubs', 'vacina').all()
+    return render(request, 'lista_ubs_vacinas.html', {'ubs_vacinas': ubs_vacinas})
 
 def buscar_disponibilidade(request):
     search_query = request.GET.get('search_query', '')
