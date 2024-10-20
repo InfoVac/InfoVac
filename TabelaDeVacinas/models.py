@@ -6,37 +6,33 @@ class UBS(models.Model):
     def __str__(self):
         return self.nome_ubs
 
-class Vacinas(models.Model):
+
+class Vacina(models.Model):  # Alterado de "Vacinas" para "Vacina" para manter a convenção de singular
     nome_vacina = models.CharField(max_length=60)
 
     def __str__(self):
         return self.nome_vacina
 
-class UBSVacinas(models.Model):
-    DISPONIBILIDADE_CHOICES = [
+
+class UBSVacina(models.Model):  # Alterado para singular e mantida a lógica de relacionamento
+    STATUS_CHOICES = [
         ('Disponível', 'Disponível'),
         ('Não Disponível', 'Não Disponível'),
     ]
+
     ubs = models.ForeignKey(UBS, on_delete=models.CASCADE)
-    vacina = models.ForeignKey(Vacinas, on_delete=models.CASCADE)
-    status = models.CharField(max_length=20, choices=DISPONIBILIDADE_CHOICES, default='Não Disponível')
+    vacina = models.ForeignKey(Vacina, on_delete=models.CASCADE)
+    status = models.CharField(
+        max_length=15,
+        choices=STATUS_CHOICES,
+        default='Não Disponível',
+    )
 
     def __str__(self):
-        return f"{self.ubs} - {self.vacina} - {self.status}"
+        return f"{self.ubs} - {self.vacina} ({self.status})"
 
-class Tabela_Disponibilidade(models.Model):
-    DISPONIBILIDADE_CHOICES = [
-        ('Disponível', 'Disponível'),
-        ('Não Disponível', 'Não Disponível'),
-    ]
-    ubs = models.ForeignKey(UBS, on_delete=models.CASCADE)
-    vacina = models.ForeignKey(Vacinas, on_delete=models.CASCADE)
-    status = models.CharField(max_length=20, choices=DISPONIBILIDADE_CHOICES, default='Não Disponível')
 
-    def __str__(self):
-        return f"{self.ubs} - {self.vacina} - {self.status}" 
-
-class Tabela_Funcionamento(models.Model):
+class TabelaFuncionamento(models.Model):  # Alterado para remover sublinhados e padronizar
     ubs = models.ForeignKey(UBS, on_delete=models.CASCADE)
     horario_abertura = models.TimeField()
     horario_fechamento = models.TimeField()
