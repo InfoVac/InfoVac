@@ -14,8 +14,14 @@ def search(request):
     return render(request, 'search.html', {'tabelas': tabelas})
 
 def buscar_disponibilidade(request):
-    ubs_vacinas = UBSVacina.objects.select_related('ubs', 'vacina').all()
+    query = request.GET.get('search_query', '')  # Obtém a consulta de pesquisa
+    ubs_vacinas = UBSVacina.objects.select_related('ubs', 'vacina')
+
+    if query:  # Se a consulta não estiver vazia
+        ubs_vacinas = ubs_vacinas.filter(ubs__nome_ubs__icontains=query)
+
     return render(request, 'lista_ubs_vacinas.html', {'ubs_vacinas': ubs_vacinas})
+
 
 def buscar_horario(request):
     nome_ubs = request.GET.get('nome_ubs', '')
