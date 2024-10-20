@@ -27,6 +27,9 @@ class UBSVacina(models.Model):  # Alterado para singular e mantida a lógica de 
         choices=STATUS_CHOICES,
         default='Não Disponível',
     )
+    
+    class Meta:
+        db_table = 'ubsvacina'  # Nome da tabela em letras minúsculas
 
     def __str__(self):
         return f"{self.ubs} - {self.vacina} ({self.status})"
