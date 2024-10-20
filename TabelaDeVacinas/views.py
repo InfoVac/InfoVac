@@ -20,7 +20,7 @@ def buscar_disponibilidade(request):
     if query:  # Se a consulta não estiver vazia
         ubs_vacinas = ubs_vacinas.filter(ubs__nome_ubs__icontains=query)
 
-    return render(request, 'search.html', {'ubs_vacinas': ubs_vacinas})
+    return render(request, 'buscar_disponibilidade.html', {'ubs_vacinas': ubs_vacinas})
 
 
 def buscar_horario(request):
