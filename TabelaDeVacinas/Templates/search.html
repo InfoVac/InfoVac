@@ -52,10 +52,10 @@
             </thead>
             <tbody>
                 <!-- Aqui você pode inserir os dados da tabela a partir do banco de dados -->
-                    {% for item in ubs_vacinas %}
+                    {% for item in UBSVacina %}
                     <tr>
-                        <td>{{ item.ubs.nome_ubs }}</td>
-                        <td>{{ item.vacina.nome_vacina }}</td>
+                        <td>{{ item.ubs.ubs }}</td>
+                        <td>{{ item.vacina.vacina }}</td>
                         <td>{{ item.status }}</td>
                     </tr>
                     {% endfor %}
